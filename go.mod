@@ -1,4 +1,4 @@
-module poseidon_oss_client
+module github.com/assassinLL/dayu_poseidon_oss
 
 go 1.16
 
