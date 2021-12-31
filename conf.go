@@ -6,7 +6,7 @@
  * @Date: 2021/12/24 14:12
  */
 
-package sirius_oss
+package poseidonOss
 
 type Config struct {
 	AccessKey    string          // AccessKey

@@ -6,7 +6,7 @@
  * @Date: 2021/12/28 9:56
  */
 
-package sirius_oss
+package poseidonOss
 
 import (
 	"os"
@@ -28,7 +28,7 @@ func TestOssSDKUpload(t *testing.T) {
 	}
 	// 传入分配给应用的ak、as、bucketId
 	// 如果还没有 找oss管理员创建一个
-	client, _ := New("ak", "as", 1)
+	client, _ := New("ak", "as", 1, "http://www.baidu.com/upload")
 	// file是文件类型  并带上文件名
 	res, err := client.UploadFile(file, "example.png")
 	if err != nil {

@@ -1,12 +1,12 @@
 /**
  * @Author: Assassin
- * @Description:
+ * @Description: 链接模块
  * @File: conn
  * @Version: 1.0.0
  * @Date: 2021/12/24 14:22
  */
 
-package sirius_oss
+package poseidonOss
 
 import (
 	"fmt"
@@ -18,15 +18,6 @@ import (
 type Conn struct {
 	Url    string
 	client *resty.Client
-}
-
-/**
- * @Author Assassin
- * @Date 2021/12/24 14:25
- * @Description 获取url
- **/
-func InitUrl() (url string) {
-	return "http://192.168.41.116:16916/oss/ossUpload"
 }
 
 /**

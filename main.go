@@ -6,7 +6,7 @@
  * @Date: 2021/12/24 14:11
  */
 
-package sirius_oss
+package poseidonOss
 
 import (
 	"bytes"
@@ -57,7 +57,7 @@ type data struct {
  * @Date 2021/12/24 14:21
  * @Description 创建新的oss
  **/
-func New(accessKey, accessSecret string, BucketId int64, options ...ClientOption) (*Client, error) {
+func New(accessKey, accessSecret string, BucketId int64, serviceUrl string, options ...ClientOption) (*Client, error) {
 	// Configuration
 	config := getDefaultOssConfig()
 	config.AccessKey = accessKey
@@ -65,7 +65,7 @@ func New(accessKey, accessSecret string, BucketId int64, options ...ClientOption
 	config.BucketId = BucketId
 
 	// HTTP connect
-	conn := &Conn{Url: InitUrl()}
+	conn := &Conn{Url: serviceUrl}
 	conn.client = ConnInitClient()
 
 	// OSS client

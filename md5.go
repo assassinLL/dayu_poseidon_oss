@@ -3,7 +3,7 @@
  * @Date: 2021/9/18 14:44
  */
 
-package sirius_oss
+package poseidonOss
 
 import (
 	"crypto/md5"
