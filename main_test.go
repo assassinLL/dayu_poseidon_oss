@@ -6,7 +6,7 @@
  * @Date: 2021/12/28 9:56
  */
 
-package poseidonOss
+package poseidon_oss
 
 import (
 	"os"

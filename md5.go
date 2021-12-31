@@ -3,7 +3,7 @@
  * @Date: 2021/9/18 14:44
  */
 
-package poseidonOss
+package poseidon_oss
 
 import (
 	"crypto/md5"
