@@ -9,6 +9,7 @@
 package poseidon_oss
 
 type Config struct {
+	AppId string                 // AppId
 	AccessKey    string          // AccessKey
 	AccessSecret string          // AccessSecret
 	BucketId     int64           // Bucket

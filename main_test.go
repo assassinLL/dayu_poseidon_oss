@@ -26,9 +26,9 @@ func TestOssSDKUpload(t *testing.T) {
 		t.Errorf("TestOssSDKUpload os.Open err=%s", err.Error())
 		return
 	}
-	// 传入分配给应用的ak、as、bucketId
+	// 传入分配给应用的appId、as、bucketId
 	// 如果还没有 找oss管理员创建一个
-	client, _ := New("ak", "as", 1, "http://www.baidu.com/upload")
+	client, _ := New("2", "2", 2, "")
 	// file是文件类型  并带上文件名
 	res, err := client.UploadFile(file, "example.png")
 	if err != nil {

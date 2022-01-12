@@ -57,10 +57,10 @@ type data struct {
  * @Date 2021/12/24 14:21
  * @Description 创建新的oss
  **/
-func New(accessKey, accessSecret string, BucketId int64, serviceUrl string, options ...ClientOption) (*Client, error) {
+func New(appId, accessSecret string, BucketId int64, serviceUrl string, options ...ClientOption) (*Client, error) {
 	// Configuration
 	config := getDefaultOssConfig()
-	config.AccessKey = accessKey
+	config.AppId = appId
 	config.AccessSecret = accessSecret
 	config.BucketId = BucketId
 
@@ -106,7 +106,7 @@ func (client Client) UploadFile(file multipart.File, filename string) (res *Uplo
 	salt := carbon.Now().Timestamp() // 混淆参数盐 为时间戳
 	formData := map[string]string{
 		"bucket_id":         strconv.FormatInt(client.Config.BucketId, 10),
-		"access_key":        client.Config.AccessKey,
+		"app_id": 			 client.Config.AppId,
 		"signature_version": string(client.Config.AuthVersion),
 		"salt":              strconv.FormatInt(salt, 10),
 		"signature":         getSignature(client, salt),
@@ -139,7 +139,7 @@ func (client Client) UploadFile(file multipart.File, filename string) (res *Uplo
 func getSignature(client Client, salt int64) (signature string) {
 	switch client.Config.AuthVersion {
 	case AuthV1:
-		oriString := fmt.Sprintf("%s%s%d", client.Config.AccessKey, client.Config.AccessSecret, salt)
+		oriString := fmt.Sprintf("%s%s%d", client.Config.AppId, client.Config.AccessSecret, salt)
 		signature = CreateMd5(oriString)
 	default:
 		return
